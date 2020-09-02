@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.sonarsource.sonarqube</groupId>
+    <artifactId>sonar-htmlreport-plugin</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>sonar-plugin</packaging>
+
+    <name>SonarQube HTML Report</name>
+    <description>HTML Report plugin for SonarQube that allows users to export analysis reports as HTML.</description>
+    <organization>
+        <name>FDC</name>
+        <url>https://cnes.fr/</url>
+    </organization>
+    <scm>
+        <url>https://github.com/dcfenga/sonar-cnes-report</url>
+    </scm>
+
+
+</project>
