@@ -26,3 +26,9 @@ Icon?
 Thumbs.db 
 # Folder config file
 Desktop.ini
+
+# ---- Node JS
+~/
+node/
+yarn.lock
+node_modules/
