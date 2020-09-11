@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.sonarsource.sonarqube</groupId>
-    <artifactId>sonar-html-report</artifactId>
+    <artifactId>htmlreport</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>sonar-plugin</packaging>
 
@@ -16,7 +16,7 @@
         <url>https://github.com/dcfenga</url>
     </organization>
     <scm>
-        <url>https://github.com/dcfenga/sonar-htmlreport-plugin</url>
+        <url>https://github.com/dcfenga/sonar-html-report</url>
     </scm>
 
     <licenses>
@@ -44,7 +44,7 @@
         <sonar.sources>src/main/java</sonar.sources>
         <sonar.test>src/test/java</sonar.test>
         <sonar.skipDependenciesPackaging>true</sonar.skipDependenciesPackaging>
-        <sonar.pluginClass>org.sonar.plugins.ReportSonarPlugin</sonar.pluginClass>
+        <sonar.pluginClass>org.sonar.plugins.HtmlReportPlugin</sonar.pluginClass>
     </properties>
 
     <dependencies>
@@ -58,6 +58,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.8.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
             <scope>compile</scope>
         </dependency>
 
@@ -84,8 +90,26 @@
                 <version>1.18.0.372</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <jarName>sonar-htmlreport-plugin-${project.version}</jarName>
+                    <jarName>sonar-html-report-${project.version}</jarName>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <!--<minimizeJar>true</minimizeJar>-->
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>

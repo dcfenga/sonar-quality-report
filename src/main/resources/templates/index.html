@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SonarQube质量统计报表</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle !important;
+        }
+
+        .table td {
+            font-size: 12px;
+        }
+
+        .danger2 {
+            background-color: #d43f3a;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#sheet1" aria-controls="sheet1" role="tab"
+                                                      data-toggle="tab">项目</a></li>
+            <li role="presentation"><a href="#sheet2" aria-controls="sheet2" role="tab" data-toggle="tab">作者</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="sheet1">
+                <table class="table table-condensed table-hover">
+                    <thead>
+                    <tr>
+                        <th rowspan="2">项目</th>
+                        <th rowspan="2">作者</th>
+                        <th colspan="5">Bug</th>
+                        <th colspan="5">漏洞</th>
+                        <th colspan="5">异味</th>
+                        <th colspan="3">总计</th>
+                    </tr>
+                    <tr>
+                        <th>阻塞</th>
+                        <th>严重</th>
+                        <th>主要</th>
+                        <th>次要</th>
+                        <th>提示</th>
+                        <th>阻塞</th>
+                        <th>严重</th>
+                        <th>主要</th>
+                        <th>次要</th>
+                        <th>提示</th>
+                        <th>阻塞</th>
+                        <th>严重</th>
+                        <th>主要</th>
+                        <th>次要</th>
+                        <th>提示</th>
+                        <th>Bug</th>
+                        <th>漏洞</th>
+                        <th>异味</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {}
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="sheet2">
+                <table class="table table-condensed table-hover">
+                    {}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>

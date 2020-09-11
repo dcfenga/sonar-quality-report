@@ -22,7 +22,7 @@ mvn clean package
 - Run an analysis with sonar-scanner, maven, gradle, msbuild, etc.
 - Execute generete html report:
 
-  Copy the sonar-htmlreport-plugin.jar in the plugin folder of SonarQube (On linux path
+  Copy the sonar-html-report.jar in the plugin folder of SonarQube (On linux path
   should be like `/opt/sonarqube/plugins`).
 
 - Restart SonarQube.
