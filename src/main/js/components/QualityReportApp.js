@@ -8,7 +8,7 @@ import React from "react";
 import {DeferredSpinner} from "sonar-components";
 import {initiatePluginToken} from "../common/api";
 
-export default class HtmlReportApp extends React.PureComponent {
+export default class QualityReportApp extends React.PureComponent {
     state = {
         loading: true,
         author: "",
@@ -37,8 +37,8 @@ export default class HtmlReportApp extends React.PureComponent {
         return (
             <div class="page-wrapper-simple">
                 <div class="page-simple">
-                    <h1 class="maintenance-title text-center">Generate a report</h1>
-                    <form id="generation-form" action="../../api/htmlreport/report" method="get">
+                    <h1 class="maintenance-title text-center">Generate Quality Report</h1>
+                    <form id="generation-form" action="../../api/qualityreport/report" method="get">
                         <div class='forminput'>
                             <label for="author" id="authorLabel" class="login-label"><strong>Author</strong></label>
                             <input type="text"
@@ -49,7 +49,7 @@ export default class HtmlReportApp extends React.PureComponent {
                                    required
                                    placeholder="Report's author" value={this.state.author}
                                    onChange={this.onChangeAuthor}/>
-                            <input type="hidden" name="token" id="token_htmlreport" defaultValue={this.state.token}/>
+                            <input type="hidden" name="token" id="token_qualityreport" defaultValue={this.state.token}/>
                         </div>
                         <br/>
                         <input id="generation" name="generation" type="submit" value="Generate"/><br/>

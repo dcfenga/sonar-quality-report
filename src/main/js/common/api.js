@@ -23,7 +23,7 @@ function getUserName(login) {
 
 // Macro function used to execute the whole plugin token process
 export function initiatePluginToken() {
-    const name = "html-report";
+    const name = "quality-report";
 
     return revokeToken(name).then(() => {
         return createToken(name).then(tokenResponse => {

@@ -5,8 +5,8 @@
 
 import React from 'react';
 import './style.css';
-import HtmlReportApp from './components/HtmlReportApp';
+import QualityReportApp from './components/QualityReportApp';
 
-window.registerExtension('htmlreport/report', () => {
-    return <HtmlReportApp/>
+window.registerExtension('qualityreport/report', () => {
+    return <QualityReportApp/>
 });

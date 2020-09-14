@@ -5,18 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.sonarsource.sonarqube</groupId>
-    <artifactId>htmlreport</artifactId>
+    <artifactId>qualityreport</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>sonar-plugin</packaging>
 
-    <name>SonarQube HTML Report</name>
-    <description>HTML Report plugin for SonarQube that allows users to export analysis reports as HTML.</description>
+    <name>SonarQube Quality Report</name>
+    <description>Quality Report plugin for SonarQube that allows users to export analysis reports as HTML file.</description>
     <organization>
         <name>FDC</name>
         <url>https://github.com/dcfenga</url>
     </organization>
     <scm>
-        <url>https://github.com/dcfenga/sonar-html-report</url>
+        <url>https://github.com/dcfenga/sonar-quality-report</url>
     </scm>
 
     <licenses>
@@ -44,7 +44,7 @@
         <sonar.sources>src/main/java</sonar.sources>
         <sonar.test>src/test/java</sonar.test>
         <sonar.skipDependenciesPackaging>true</sonar.skipDependenciesPackaging>
-        <sonar.pluginClass>org.sonar.plugins.HtmlReportPlugin</sonar.pluginClass>
+        <sonar.pluginClass>org.sonar.plugins.ReportPlugin</sonar.pluginClass>
     </properties>
 
     <dependencies>
@@ -90,7 +90,7 @@
                 <version>1.18.0.372</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <jarName>sonar-html-report-${project.version}</jarName>
+                    <jarName>sonar-quality-report-${project.version}</jarName>
                 </configuration>
             </plugin>
 

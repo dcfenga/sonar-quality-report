@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * String manager for sonar-html-report
+ * String manager for sonar-quality-report
  */
 public class PluginStringManager {
     private static Properties properties = new Properties();

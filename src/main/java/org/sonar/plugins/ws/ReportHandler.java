@@ -1,7 +1,6 @@
 package org.sonar.plugins.ws;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.server.ws.Request;
 import org.sonar.api.server.ws.RequestHandler;
@@ -9,6 +8,9 @@ import org.sonar.api.server.ws.Response;
 
 import java.io.File;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Logger;
 
 public class ReportHandler implements RequestHandler {
@@ -36,15 +38,21 @@ public class ReportHandler implements RequestHandler {
      */
     @Override
     public void handle(Request request, Response response) throws Exception {
-        LOGGER.info("ReportHandler");
+        LOGGER.info("Requesting all project report...");
 
         // Getting stream and change headers
         Response.Stream stream = response.stream();
         stream.setMediaType("application/html");
 
-        InputStream input =  getClass().getResourceAsStream("/templates/index.html");
+        File file = File.createTempFile("qualityreport_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy_MM_dd")) + "_", ".html");
+        Files.delete(file.toPath());
 
-        //response.setHeader("Content-Disposition", "attachment; filename=\"" + file + '"');
-        IOUtils.copy(input, stream.output());
+        InputStream input = getClass().getResourceAsStream("/templates/index.html");
+        FileUtils.copyInputStreamToFile(input, file);
+        FileUtils.copyFile(file, stream.output());
+
+        response.setHeader("Content-Disposition", "attachment; filename=\"" + file + '"');
+
+        LOGGER.info("Quality report generation: SUCCESS");
     }
 }

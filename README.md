@@ -1,5 +1,5 @@
-Sonar HTML Report Plugin
-========================
+Sonar Quality Report Plugin
+===========================
 
 基于SonarQube插件机制开发的、用于展示项目组成员代码质量的插件。
 
@@ -20,11 +20,11 @@ mvn clean package
 
 - Setup a SonarQube instance.
 - Run an analysis with sonar-scanner, maven, gradle, msbuild, etc.
-- Execute generete html report:
+- Execute generete quality report:
 
-  Copy the sonar-html-report.jar in the plugin folder of SonarQube (On linux path
-  should be like `/opt/sonarqube/plugins`).
+  Copy the sonar-quality-report-<version>.jar in the plugin folder of SonarQube (On linux
+  path should be like `/opt/sonarqube/plugins`).
 
 - Restart SonarQube.
 
-- Open SoanrQube web UI: "More" > "HTML Report".
+- Open SoanrQube web UI: "More" > "Quality Report".
